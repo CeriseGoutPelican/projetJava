@@ -1,8 +1,6 @@
 
 package simulateurzytho;
 
-import simulateurzytho.Humain.Client.Patron;
-
 /**
  * CLASSE CAISSE
  * ============

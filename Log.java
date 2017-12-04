@@ -3,9 +3,7 @@ package simulateurzytho;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 /**
  * CLASSE LOG
@@ -44,6 +42,7 @@ public final class Log {
      * ENTREES
      * =======
      * @param texte 
+     * Texte à mettre dans le log
      */
     public Log(String texte){
         

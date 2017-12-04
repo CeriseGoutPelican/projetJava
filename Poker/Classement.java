@@ -9,14 +9,19 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
- *
+ * 
  * @author hugos
  */
 public class Classement {
        
-    public void trieParScore(int data[][]){
+    /**
+     * Trie le tableau en fonction du score et non du numéro du joueur
+     * @param score
+     *  tableau de score 
+     */
+    public void trieParScore(int score[][]){
 
-        Arrays.sort(data, new Comparator<int[]>() {
+        Arrays.sort(score, new Comparator<int[]>() {
             @Override
             public int compare(final int[] entry1, final int[] entry2) {
                 final int score = entry1[0];

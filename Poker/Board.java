@@ -12,7 +12,15 @@ import simulateurzytho.Log;
  * @author hugos
  */
 public class Board {
+    /**
+     * Board contenant 5 cartes à la fin de la distribution des cartes
+     */
     private Carte[] board = new Carte[5];
+    
+    /**
+     * Cartes brulées contenant les cartes brulées entre chaque distribution
+     * sur le board (flop, turn, river)
+     */
     private Carte[] cartesBrulees = new Carte[3];
 
     /**
@@ -23,8 +31,10 @@ public class Board {
 
     /**
      * Setter pour les cartes du board
-     * @param carte
+     * @param carte 
+     *  correspond à une carte
      * @param numCarte
+     *  numero de la carte
      */
     protected void setCarteBoard(Carte carte, int numCarte){
             this.board[numCarte] = carte;
@@ -33,7 +43,9 @@ public class Board {
     /**
      * Getter pour les cartes du board
      * @param numCarte
-     * @return
+     *  numero de la carte
+     * @return la carte présente sur le board
+     * correspondant à son numéro
      */
     protected Carte getCarteBoard(int numCarte){
             return this.board[numCarte];
@@ -42,7 +54,9 @@ public class Board {
     /**
      * Setter cartes brulées
      * @param carte
+     * correspond à une carte
      * @param numCarte
+     *  numéro de la carte
      */
     protected void setCarteBrulee(Carte carte, int numCarte){
             this.cartesBrulees[numCarte] = carte;
@@ -50,11 +64,12 @@ public class Board {
 
     /**
      * Getter cartes brulées
-     * @param cardNum
-     * @return
+     * @param numCarte
+     *  numero de la carte  
+     * @return la carte brulée en fonction de son numéro
      */
-    protected Carte getCarteBrulee(int cardNum){
-            return this.cartesBrulees[cardNum];
+    protected Carte getCarteBrulee(int numCarte){
+            return this.cartesBrulees[numCarte];
     }
 
     /**

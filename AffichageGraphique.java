@@ -233,6 +233,7 @@ public class AffichageGraphique {
      * INFORMATIONS
      * ============
      * @throws java.lang.Exception
+     *  Gère exception pour poker
      * @since 1.0
      */
     static public void affichageInterface(Interface interfaceActuelle, String[] arguments) throws Exception{
@@ -323,6 +324,7 @@ public class AffichageGraphique {
      * INFORMATIONS
      * ============
      * @throws java.lang.Exception
+     *  Gère les exceptions pour le poker
      * @since 1.0
      */
     public static void instructionUtilisateur(Interface[] enfants) throws Exception{
@@ -367,6 +369,7 @@ public class AffichageGraphique {
      * INFORMATIONS
      * ============
      * @throws java.lang.Exception
+     * Gère les exceptions pour le poker
      * @since 1.0
      */
     public static void fonctionUtilisation(String fonction, String[] arguments) throws Exception{

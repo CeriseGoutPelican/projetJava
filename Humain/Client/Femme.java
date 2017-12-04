@@ -1,7 +1,6 @@
 package simulateurzytho.Humain.Client;
 
 import simulateurzytho.Boisson;
-import simulateurzytho.Humain.Client.Client;
 
 /**
  * CLASSE Femme

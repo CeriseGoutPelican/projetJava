@@ -1,6 +1,5 @@
 package simulateurzytho.Humain;
 
-import java.io.IOException;
 import java.util.List;
 import simulateurzytho.AffichageGraphique;
 import simulateurzytho.Commande;

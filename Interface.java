@@ -252,7 +252,6 @@ public class Interface{
      * ====================
      * Ajoute un nouvel élément à la liste des enfants d'un élément
      * Classe surchargée
-     * @see {@link #setEnfants(Interface)}
      * 
      * ENTREES
      * =======

@@ -45,6 +45,7 @@ public class Paquet{
      * Trouve la carte dans le paquet de façon linéaire
      * Utilisez cette méthode si le paquet est mélangé
      * @param carte
+     *  une carte
      * @return l'emplacement de la carte dans le paquet si elle y es
      * sinon retourne -1
      */
@@ -60,6 +61,7 @@ public class Paquet{
     /**
      * Get la carte spécifié du paquet
      * @param numCarte
+     * numero de carte
      * @return la carte spécifié par son emplacement dans le paquet
      */
     protected Carte getCarte(int numCarte){
@@ -98,7 +100,9 @@ public class Paquet{
      * Echange des cartes entre elles dans le paquet
      * Sert pour mélanger le jeu
      * @param i
+     *  int temporaire pour boucler et echanger les cartes
      * @param change 
+     *  int temporaire pour echanger les cartes
      */
     private void echangerCartes(int i, int change){             
         Carte temp = cartes[i];

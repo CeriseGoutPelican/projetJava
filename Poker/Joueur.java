@@ -19,6 +19,7 @@ public class Joueur {
     /**
      * Constructeur Joueur
      * @param client 
+     *  un client issu de la classe Client
      */
     public Joueur(Client client){
         this.client = client;
@@ -27,8 +28,11 @@ public class Joueur {
     /**
      * Overload de Joueur avec des arguments supp
      * @param client
+     *  un client issu de la classe Client
      * @param carte1
+     *  une premiere carte issu de la classe Carte
      * @param carte2
+     *  une deuxieme carte issu de la classe Carte
      */
     public Joueur(Client client, Carte carte1, Carte carte2){
         cartesCachees[0] = carte1;
@@ -39,7 +43,7 @@ public class Joueur {
 
     /**
      * Retourne le client
-     * @return 
+     * @return le client
      */
     public Client getClient() {
         return client;
@@ -48,7 +52,9 @@ public class Joueur {
     /**
      * Set les cartes cachées du joueur
      * @param carte
+     *  une carte
      * @param numCarte
+     *  numero de la carte
      */
     protected void setCarte(Carte carte, int numCarte){
        cartesCachees[numCarte] = carte;
@@ -57,6 +63,7 @@ public class Joueur {
     /**
      * Get les cartes cachées
      * @param numCarte
+     *  numero de la carte
      * @return les cartes cachées
      */
     protected Carte getCarte(int numCarte){
@@ -74,6 +81,7 @@ public class Joueur {
     /**
      * Affiche les cartes du joueur
      * @param prenomJoueur
+     *  prenom du joueur
      */
     protected void afficherCartesJoueur(String prenomJoueur){
         new Log("Cartes cachées de " + prenomJoueur + " :");

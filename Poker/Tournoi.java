@@ -15,6 +15,12 @@ import java.util.Scanner;
  * @author hugos
  */
 public class Tournoi {
+
+    /**
+     * Lance un tournoi
+     * @throws Exception
+     *  Gere les exceptions de getNombreDeJoueurs et getJouerOuObserver
+     */
     public static void tournoi() throws Exception{
         //Variables
         int nbrJoueurs;
@@ -44,7 +50,13 @@ public class Tournoi {
         }
     }
     
-    public static int unTour(int nbrJoueurs) throws Exception{
+    /**
+     * Lance un tour de jeu et supprime deux joueurs pour le suivant
+     * @param nbrJoueurs
+     * nombre de joueurs
+     * @return nombre de joueurs restant
+     */
+    public static int unTour(int nbrJoueurs) {
         int nbrJoueursRestant = nbrJoueurs;
         Poker.Poker(nbrJoueursRestant);
         return nbrJoueursRestant = nbrJoueursRestant - 2;
@@ -54,6 +66,7 @@ public class Tournoi {
      * Get le choix du joueur
      * @return le choix en String
      * @throws Exception 
+     *  Exception si choix différent des deux possibilités
      */
     protected static String getJouerOuObserver() throws Exception{
             
@@ -73,6 +86,8 @@ public class Tournoi {
      * Get le nombre de joueurs
      * @return le nombre de joueur en integer
      * @throws Exception
+     *  Exception si le nombre de joueurs n'est pas compris 
+     * entre 1 et le nombre de joueurs max
      */
     protected static int getNombreDeJoueurs() throws Exception{
         int intJoueurs = 0;

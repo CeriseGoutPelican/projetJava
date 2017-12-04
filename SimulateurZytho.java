@@ -158,6 +158,7 @@ public class SimulateurZytho {
      * INFORMATIONS
      * ============
      * @throws java.lang.Exception
+     * Gère les exceptions du poker
      * @since 1.0
      */
     public static void main(String[] args) throws Exception {

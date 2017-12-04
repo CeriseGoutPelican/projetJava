@@ -35,8 +35,10 @@ public class Carte {
 
     /**
      * Constructeur d'une carte
-     * @param valeur de la carte
-     * @param couleur de la carte
+     * @param valeur 
+     *  valeur de la carte
+     * @param couleur 
+     *  couleur de la carte
      */
     public Carte(short valeur, short couleur){
             this.valeur = valeur;
@@ -62,6 +64,7 @@ public class Carte {
     /**
      * Setter couleur de la carte
      * @param couleur
+     *  couleur de la carte
      */
     protected void setCouleur(short couleur){
             this.couleur = couleur;
@@ -70,6 +73,7 @@ public class Carte {
     /**
      * Setter valeur de la carte
      * @param valeur
+     *  valeur de la carte
      */
     protected void setValeur(short valeur){
             this.valeur = valeur;
@@ -78,6 +82,7 @@ public class Carte {
     /**
      * Valeur de la carte en string
      * @param __valeur
+     *    valeur de la carte en int
      * @return la valeur de la carte en string
      */
     public static String valeurAsString(int __valeur){
@@ -87,13 +92,18 @@ public class Carte {
     /**
      * Couleur de la carte en string
      * @param __couleur
+     *  valeur de la couleur en int
      * @return la valeur de la carte en string
      */
     public static String couleurAsString(int __couleur){
             return couleurs[__couleur];
     }
     
-    
+    /**
+     * Override de la fonction toString pour afficher les cartes
+     * sous la forme (valeur de la carte) de (couleur de la carte) 
+     * @return String avec (valeurdelacarte) de (couleurdelacarte)
+     */
     @Override
     public String toString(){
             return valeur + " de " + couleur;
@@ -110,7 +120,9 @@ public class Carte {
     /**
      * Determine si deux cartes sont les mêmes (As de Pique == As de Pique)
      * @param carte1
+     *  premiere carte
      * @param carte2
+     *  deuxième carte
      * @return True si les cartes sont identique sinon False
      */
     public static boolean memeCarte(Carte carte1, Carte carte2){
@@ -124,6 +136,15 @@ public class Carte {
  * @author hugos
  */
 class comparateurValeur implements Comparator<Object>{
+    /**
+     * override de la fonction compare pour les valeurs
+     * @param carte1
+     *  première carte
+     * @param carte2
+     *  deuxième carte
+     * @return la comparaison entre les deux objets
+     * @throws ClassCastException 
+     */
     @Override
     public int compare(Object carte1, Object carte2) throws ClassCastException{
             // vérifie que les deux objets carte 1 et carte 2 sont passés dedans
@@ -144,6 +165,15 @@ class comparateurValeur implements Comparator<Object>{
  * @author hugos
  */
 class comparateurCouleur implements Comparator<Object>{
+    /**
+     * override de la fonction compare pour les couleurs
+     * @param carte1
+     *  première carte
+     * @param carte2
+     *  deuxième carte
+     * @return la comparaison entre les deux objets
+     * @throws ClassCastException 
+     */
     @Override
     public int compare(Object carte1, Object carte2) throws ClassCastException{
             // vérifie que les deux objets carte1 et carte2 sont passés dedans

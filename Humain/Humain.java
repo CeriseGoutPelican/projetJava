@@ -78,8 +78,6 @@ public class Humain {
      * =======
      * @param prenom
      *          Prénom d'un humain
-     * @param slug
-     *          Slug du prénom
      * @param surnom
      *          Surnom d'un humain
      * @param argent
@@ -563,7 +561,6 @@ public class Humain {
      * Cette méthode permet à un humain de boire un verre 
      * 
      * Un client peut boire de l'alcool, la fonction aura un overright
-     * @See Client.boire
      * 
      * ENTREES
      * =======

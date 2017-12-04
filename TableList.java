@@ -1,9 +1,17 @@
 package simulateurzytho;
 
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.regex.Pattern;
 
+/**
+ * Classe permettant d'organiser le contenu sous
+ * forme d'un tableau ASCII code rédigé par Flamenco
+ * https://github.com/therealfarfetchd/crogamp/blob/master/src/com/github/mrebhan/crogamp/cli/TableList.java 
+ * Le code n'était pas commenté donc rajout de notre part du minimum nécessaire pour la javadoc
+ * @author Flamenco
+ */
 
 public class TableList {
 
@@ -86,6 +94,9 @@ public class TableList {
 
 	/**
 	 * Adds a row to the table with the specified elements.
+         * @param elements
+         *  elements en String
+         * @return this
 	 */
 
 	public TableList addRow(String... elements) {

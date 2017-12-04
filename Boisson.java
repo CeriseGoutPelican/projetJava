@@ -1,6 +1,5 @@
 package simulateurzytho;
 
-import java.util.LinkedList;
 import java.util.List;
 import static simulateurzytho.AffichageGraphique.floatToString;
 import simulateurzytho.Humain.Barman;

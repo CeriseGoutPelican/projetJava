@@ -21,6 +21,7 @@ public class Poker {
     /**
      * Programme principale d'un tour de Poker
      * @param nbrJoueurs
+     *  Nombre de joueurs
      */
     public static void Poker(int nbrJoueurs) {
     

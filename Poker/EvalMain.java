@@ -44,7 +44,9 @@ public class EvalMain {
      * pour pouvoir comparer les cartes du joueur et du board
      * avec les différentes combinaisons
      * @param carte
+     *  une carte
      * @param i 
+     *  int pour le parcours
      */
     protected void ajouterCarte(Carte carte, int i){
         cartesDisponibles[i] = carte;
@@ -54,6 +56,7 @@ public class EvalMain {
      * Get les cartes disponibles
      * celles ajoutés ensembles
      * @param i
+     *  int pour le parcours
      * @return les cartes disponibles
      */
     protected Carte getCarte(int i){
@@ -189,7 +192,9 @@ public class EvalMain {
     /**
      * Check si le joueur à une quinte flush royale
      * @param compteurValeur
+     *  compteur de valeur
      * @param compteurCouleur
+     *  compteur de couleur
      * @return le résultat avec la couleur de la quinte si le joueur en a une
      */
     private String checkQuinteFlushRoyale(short[] compteurValeur, short[] compteurCouleur){
@@ -233,7 +238,9 @@ public class EvalMain {
      * Check si le joueur à une quinte flush 
      * ce qui correspond à 5 cartes consecutives de la même couleur.
      * @param compteurValeur
+     *  compteur de valeur
      * @param compteurCouleur
+     *  compteur de couleur
      * @return le résultat avec la couleur de la quinte et la carte la plus haute si le joueur en a une
      */
     private String checkQuinteFlush(short[] compteurValeur, short[] compteurCouleur){
@@ -264,6 +271,7 @@ public class EvalMain {
      * Check si le joueur à un carré
      * ce sont 4 cartes de même valeur : 2-2-2-2, 3-3-3-3, etc...
      * @param compteurValeur
+     * compteur de valeur
      * @return le résultat avec la valeur des cartes qui forme le carré si le joueur en a un
      */
     private String checkCarre(short[] compteurValeur){
@@ -284,6 +292,7 @@ public class EvalMain {
      * C'est 3 cartes de même valeur et 2 cartes d'une même autre valeur 
      * EX: V-V-V-3-3
      * @param compteurValeur
+     * compteur de valeur
      * @return le résultat avec la valeur des cartes du brelan et de celle de la paire
      * si le joueur a un full
      */
@@ -318,7 +327,9 @@ public class EvalMain {
      * Check si le joueur a une couleur
      * c'est à dire 5 cartes de même couleur
      * @param compteurValeur
+     * compteur de valeur
      * @param compteurCouleur
+     *  compteur de couleur
      * @return le résultat avec la carte la plus haute de la couleur si le joueur en a une
      */
     private String checkCouleur(short[] compteurValeur, short[] compteurCouleur){
@@ -345,6 +356,7 @@ public class EvalMain {
      * Check si le joueur a une suite
      * C'est 5 cartes consécutives sans prendre en compte la couleur
      * @param compteurValeur
+     * compteur de valeur
      * @return le resultat avec la carte la plus haute de la suite si le joueur en a une
      */
     private String checkSuite(short[] compteurValeur){
@@ -369,6 +381,7 @@ public class EvalMain {
      * Check si le joueur a une brelan
      * c'est 3 cartes de même valeur
      * @param compteurValeur
+     * compteur de valeur
      * @return le résultat avec la valeur du brelan si le joueur en a un
      */
     private String checkBrelan(short[] compteurValeur){
@@ -389,6 +402,7 @@ public class EvalMain {
      * Check si le joueur a deux paires
      * C'est à dire 2 fois deux cartes de même valeur entre elles EX: 2-2-6-6
      * @param compteurValeur
+     * compteur de valeur
      * @return le résultat avec la valeur de chaque paire
      * en commencant par la plus haute si le joueur en a
      */
@@ -432,6 +446,7 @@ public class EvalMain {
      * Check si le joueur a une paire
      * ce qui correspond à deux cartes de même valeurs
      * @param compteurValeur
+     * compteur de valeur
      * @return le résultat avec la valeur de la paire si le joueur en a une
      */
     private String checkPaire(short[] compteurValeur){
@@ -451,6 +466,7 @@ public class EvalMain {
      * Check la hauteur du joueur
      * La hauteur correspond à la carte la plus haute des 7 cartes (main + board)
      * @param compteurValeur
+     * compteur de valeur
      * @return le résultat avec la carte la plus haute du joueur
      * si le joueur a aucune combinaison
      */
