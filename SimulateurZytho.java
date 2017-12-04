@@ -34,11 +34,6 @@ public class SimulateurZytho {
     /**
      * Génération de l'interface d'accueil
      */
-    public static Bar bar;
-    
-    /**
-     * Génération de l'interface d'accueil
-     */
     private static Interface accueil;
     
     /**
@@ -92,6 +87,11 @@ public class SimulateurZytho {
     private static Interface creation_perso;
     
     /**
+     * Génération de l'interface du poker
+     */
+    private static Interface poker;
+    
+    /**
      * Ferme le programme
      */
     private static Interface exit;
@@ -135,6 +135,11 @@ public class SimulateurZytho {
      * Liste de toutes les commandes
      */
     public static List<Commande> listeCommandes = new ArrayList<>();
+    
+    /**
+     * Liquidités disponibles
+     */
+    private static float liquidites = 300;
         
     /**
      * METHODE MAIN
@@ -152,12 +157,10 @@ public class SimulateurZytho {
      * 
      * INFORMATIONS
      * ============
+     * @throws java.lang.Exception
      * @since 1.0
      */
-    public static void main(String[] args) {
-        
-        // Création du bar
-        bar = new Bar("Zytho", 300);
+    public static void main(String[] args) throws Exception {
         
         // Génération des interfaces
         makeInterface();
@@ -192,7 +195,7 @@ public class SimulateurZytho {
      * @since 1.0
      */
     public static void makeInterface(){
-        accueil            = new Interface("Accueil : " + bar.getNom(), "accueil", "Accueil", "planZytho", null, null, null);
+        accueil            = new Interface("Accueil du Zytho", "accueil", "Accueil", "planZytho", null, null, null);
         stocks             = new Interface("Affichage des stocks", "stocks", "Stocks", null, "affichageStocks", accueil, null);
         renouveler         = new Interface("Renouveler le stock d'une bouteille", "renouveler", "Renouveler le stock", null, "renouvelerStocks", stocks, null);
         commandes          = new Interface("Liste des commandes", "commandes", "Liste des commandes", null, "affichageCommandes", stocks, null);
@@ -203,10 +206,11 @@ public class SimulateurZytho {
         clients            = new Interface("Gestion des clients", "clients", "Liste des clients", null, "affichageClients", accueil, null);
         generation_perso   = new Interface("Génération aléatoire d'un personnage", "generationPerso", "Génération de personnages", null, "generationPersonnages", accueil, null);
         creation_perso     = new Interface("Création d'un personnage", "creationPerso", "Création de personnages", null, "creationPersonnage", accueil, null);
+        poker              = new Interface("Table de poker", "poker", "Jouer au poker", null, "tournoi", accueil, null );
         exit               = new Interface("Fermeture", "exit", "Fermer", null, "fermerProgramme", null, null);
         erreur             = new Interface("Erreur !", "exit", "Fermer", null, "erreur", null, null);
         
-        accueil.setEnfants(new Interface[]{stocks, comptes, personnel, clients, exit});
+        accueil.setEnfants(new Interface[]{stocks, comptes, personnel, clients, poker, exit});
         stocks.setEnfants(new Interface[]{accueil, renouveler, commandes, exit});
         renouveler.setEnfants(new Interface[]{stocks, commandes, exit});
         commandes.setEnfants(new Interface[]{stocks, payement_commande, livraison_commande, exit});
@@ -215,8 +219,9 @@ public class SimulateurZytho {
         comptes.setEnfants(new Interface[]{accueil, exit});
         personnel.setEnfants(new Interface[]{accueil, generation_perso, creation_perso, exit});
         clients.setEnfants(new Interface[]{accueil, generation_perso, creation_perso, exit});
-        generation_perso.setEnfants(new Interface[]{clients, personnel, exit});
+        generation_perso.setEnfants(new Interface[]{accueil, clients, personnel, exit});
         creation_perso.setEnfants(new Interface[]{clients, personnel, exit});
+        poker.setEnfants(new Interface[]{accueil, poker, exit });
         erreur.setEnfants(new Interface[]{accueil, exit});
     } 
     
@@ -318,13 +323,56 @@ public class SimulateurZytho {
         
         float[] statistiques = {
             0,                                  // Argent caisse
-            bar.getLiquidites(),                // Argent disponible
+            liquidites,                         // Argent disponible
             listeClients.size(),                // Nombre de clients
             listeServeurs.size(),               // Nombre de serveurs
             Boisson.getQuantiteStocks()};       // Stocks
         
         return statistiques;
-    } 
+    }
+        
+    /**
+     * METHODE GET_LIQUIDITES
+     * ======================
+     * Cette méthode permet de récupérer les liquidités totales du Zytho
+     * 
+     * ENTREES
+     * =======
+     * Aucune entrée
+     * 
+     * SORTIES
+     * =======
+     * @return l'argent disponible sur les comptes
+     * 
+     * INFORMATIONS
+     * ============
+     * @since 1.0
+     */
+    public static float getLiquidites() {  
+        return liquidites;
+    }    
+    
+    /**
+     * METHODE SET_LIQUIDITES
+     * ======================
+     * Cette méthode permet de modifier les liquidites totales du Zytho
+     * 
+     * ENTREES
+     * =======
+     * @param modification 
+     *          Nombre positif et négatif qui sera ajouté au montant des liquidités
+     * 
+     * SORTIES
+     * =======
+     * Aucune sortie 
+     * 
+     * INFORMATIONS
+     * ============
+     * @since 1.0
+     */
+    public static void setLiquidites(float modification) {  
+        liquidites += modification;
+    }
     
     /**
      * METHODE SELECTION_ALEATOIRE

@@ -9,14 +9,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+import simulateurzytho.Poker.Tournoi;
 import simulateurzytho.Humain.Barman;
-import simulateurzytho.Humain.Client.Client;
 import simulateurzytho.Humain.Client.Femme;
 import simulateurzytho.Humain.Client.Homme;
 import simulateurzytho.Humain.Client.Patron;
 import simulateurzytho.Humain.Fournisseur;
 import simulateurzytho.Humain.Humain;
-import simulateurzytho.Humain.Serveur.Serveur;
 import simulateurzytho.Humain.Serveur.ServeurFemme;
 import simulateurzytho.Humain.Serveur.ServeurHomme;
 
@@ -233,9 +232,10 @@ public class AffichageGraphique {
      * 
      * INFORMATIONS
      * ============
+     * @throws java.lang.Exception
      * @since 1.0
      */
-    static public void affichageInterface(Interface interfaceActuelle, String[] arguments){
+    static public void affichageInterface(Interface interfaceActuelle, String[] arguments) throws Exception{
         // Affichage du titre
         separation();
         titre(interfaceActuelle.getNom());
@@ -322,9 +322,10 @@ public class AffichageGraphique {
      * 
      * INFORMATIONS
      * ============
+     * @throws java.lang.Exception
      * @since 1.0
      */
-    public static void instructionUtilisateur(Interface[] enfants){
+    public static void instructionUtilisateur(Interface[] enfants) throws Exception{
              
         // Demande à l'utilisateur une nouvelle interface
         System.out.print("> ");
@@ -365,9 +366,10 @@ public class AffichageGraphique {
      * 
      * INFORMATIONS
      * ============
+     * @throws java.lang.Exception
      * @since 1.0
      */
-    public static void fonctionUtilisation(String fonction, String[] arguments){
+    public static void fonctionUtilisation(String fonction, String[] arguments) throws Exception{
 
         switch(fonction){
             case "affichageStocks":
@@ -396,6 +398,9 @@ public class AffichageGraphique {
             break;
             case "creationPersonnage":
                 Humain.creationPersonnage(arguments);
+            break;
+            case "tournoi":
+                Tournoi.tournoi() ;
             break;
             case "fermerProgramme":
                 System.exit(0);
