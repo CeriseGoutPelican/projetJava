@@ -1,6 +1,5 @@
 package simulateurzytho.Humain;
 
-import com.sun.xml.internal.ws.util.StringUtils;
 import java.util.Arrays;
 import java.util.Scanner;
 import simulateurzytho.AffichageGraphique;
@@ -313,18 +312,22 @@ public class Humain {
                     // Sélection d'un prénom (musculin else feminin)
                     String cPrenom;
                     if("client".equals(arguments[0]) || "serveur".equals(arguments[0]) || "barman".equals(arguments[0]) || "patron".equals(arguments[0])){
-                        cPrenom = StringUtils.capitalize(SimulateurZytho.selectionAleatoire("prenomsGarcon"));
+                        cPrenom = SimulateurZytho.selectionAleatoire("prenomsGarcon");
+                        cPrenom = cPrenom.substring(0, 1).toUpperCase() + cPrenom.substring(1);
                     } else {
-                        cPrenom = StringUtils.capitalize(SimulateurZytho.selectionAleatoire("prenomsFille"));
+                        cPrenom = SimulateurZytho.selectionAleatoire("prenomsFille");
+                        cPrenom = cPrenom.substring(0, 1).toUpperCase() + cPrenom.substring(1);
                     }
                     // Sélection d'un surnom
-                    String cSurnom = StringUtils.capitalize(SimulateurZytho.selectionAleatoire("surnoms"));
+                    String cSurnom = SimulateurZytho.selectionAleatoire("surnoms");
+                    cSurnom = cSurnom.substring(0, 1).toUpperCase() + cSurnom.substring(1);
                     // Sélection d'une quantité d'argent (entre 0€ et 100€)
                     float cArgent = 0 + (int)(Math.random() * 100);
                     // Sélection d'un côte de popularite (entre 0 et 20)
                     float cPopularite = 0 + (int)(Math.random() * 20);
                     // Sélection d'un cri de guerre
-                    String cCri = StringUtils.capitalize(SimulateurZytho.selectionAleatoire("cris"));
+                    String cCri = SimulateurZytho.selectionAleatoire("cris");
+                    cCri = cCri.substring(0, 1).toUpperCase() + cCri.substring(1);
 
                     // Génération des caractéristiques suivant le type de création puis enregistrement
                     switch(arguments[0]){
@@ -342,12 +345,14 @@ public class Humain {
                             // Génération du nombre de dépenses totales (entre 0 et 50€)
                             float cTotalDepenses = (0 + (int)(Math.random() * 500))/10;
                             // Génération qualificatif serveur
-                            String cQualificatif = StringUtils.capitalize(SimulateurZytho.selectionAleatoire("qualificatifs"));
+                            String cQualificatif = SimulateurZytho.selectionAleatoire("qualificatifs");
+                            cQualificatif = cQualificatif.substring(0, 1).toUpperCase() + cQualificatif.substring(1);
 
                             // Séparation client/cliente pour le dernier agument
                             if("client".equals(arguments[0]) || "patron".equals(arguments[0])){
                                 // Génératio aléatoire d'un couleur de tshirt
-                                String cCouleurTshirt = StringUtils.capitalize(SimulateurZytho.selectionAleatoire("couleurs"));
+                                String cCouleurTshirt = SimulateurZytho.selectionAleatoire("couleurs");
+                                cCouleurTshirt = cCouleurTshirt.substring(0, 1).toUpperCase() + cCouleurTshirt.substring(1);
 
                                 // Séparation client/patron
                                 if("client".equals(arguments[0])){
@@ -359,7 +364,8 @@ public class Humain {
                                 }
                             } else if("cliente".equals(arguments[0])) {
                                 // Génération aléatoire d'un type de bijoux
-                                String cBijoux = StringUtils.capitalize(SimulateurZytho.selectionAleatoire("bijoux"));
+                                String cBijoux = SimulateurZytho.selectionAleatoire("bijoux");
+                                cBijoux = cBijoux.substring(0, 1).toUpperCase() + cBijoux.substring(1);
                                 SimulateurZytho.listeClients.add(new Femme(cPrenom, cSurnom, cArgent, cPopularite, cCri, cBoisson1, cBoisson2, cAlcoolemie, cRegularite, cTotalDepenses, cBijoux, cQualificatif)); 
                                 System.out.println(AffichageGraphique.GREEN + "La cliente n°"+i+" a.ont bien été généré !" + AffichageGraphique.RESET);
                             } 
@@ -474,7 +480,8 @@ public class Humain {
                         float cTotalDepenses = Float.parseFloat(input.nextLine());
                         // Génération qualificatif serveur
                         System.out.print("Qualificatif (comment le personnage interpelle un.e serveur.euse ?\n> ");
-                        String cQualificatif = StringUtils.capitalize(SimulateurZytho.selectionAleatoire("qualificatifs"));
+                        String cQualificatif = SimulateurZytho.selectionAleatoire("qualificatifs");
+                        cQualificatif = cQualificatif.substring(0, 1).toUpperCase() + cQualificatif.substring(1);
 
                         // Séparation client/cliente pour le dernier agument
                         if("client".equals(arguments[0]) || "patron".equals(arguments[0])){
